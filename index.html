@@ -12,7 +12,7 @@
   <script src="https://unpkg.com/lucide@latest"></script>
   <style>
     :root{--bg:#0a0618;--text:#fff;--accent:#00d4ff;--accent2:#ff2e63;--glass:rgba(255,255,255,0.06);}
-    *{margin:0;padding:0;box-sizing:border-box;}
+    *{margin:0;padding:0;box-sizing:border-box;text-decoration: none;}
     body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
     
     header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,6,24,0.95);backdrop-filter:blur(20px);padding:16px 0;transition:0.4s;}
@@ -54,7 +54,7 @@
     justify-content: center;
     align-items: center;
     gap: 45px;
-    font-size: 1.6rem;
+    font-size: 1.2rem;
     font-weight: 700;
     transform: translateY(-100%);
     opacity: 0;
@@ -82,7 +82,7 @@
   .nav-links a:hover,
   .nav-links a.active {
     color: var(--accent) !important;
-    transform: translateX(15px);
+    transform: translateX(10px);
   }
 
   .nav-links a::after {
