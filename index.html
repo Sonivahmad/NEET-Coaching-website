@@ -21,8 +21,106 @@
     .nav-links a{color:#ccc;margin:0 20px;font-weight:600;text-decoration:none;transition:0.3s;}
     .nav-links a:hover,.nav-links a.active{color:var(--accent);}
     .enroll-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:14px 36px;border-radius:50px;font-weight:800;}
+/* Hamburger Icon */
+  .hamburger {
+  display: none;
+  cursor: pointer;
+  z-index: 1001;
+}
+.hamburger div {
+  width: 28px;
+  height: 3px;
+  background: #fff;
+  margin: 5px;
+  transition: all 0.3s ease;
+  border-radius: 3px;
+}
 
-    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
+/* Show hamburger on mobile */
+/* MOBILE MENU – NOW LOOKS PREMIUM & PERFECT */
+@media (max-width: 992px) {
+  .hamburger { display: block; }
+
+  .nav-links {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    background: linear-gradient(135deg, rgba(10,6,24,0.99), rgba(15,11,31,0.98));
+    backdrop-filter: blur(30px);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 45px;
+    font-size: 1.6rem;
+    font-weight: 700;
+    transform: translateY(-100%);
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.5s cubic-bezier(0.77, 0, 0.18, 1);
+    padding: 0;
+  }
+
+  .nav-links.active {
+    transform: translateY(0);
+    opacity: 1;
+    visibility: visible;
+  }
+
+  /* Beautiful link styling in mobile menu */
+  .nav-links a {
+    color: #fff !important;
+    margin: 0;
+    padding: 12px 0;
+    position: relative;
+    transition: all 0.4s ease;
+    text-shadow: 0 0 20px rgba(0,212,255,0.3);
+  }
+
+  .nav-links a:hover,
+  .nav-links a.active {
+    color: var(--accent) !important;
+    transform: translateX(15px);
+  }
+
+  .nav-links a::after {
+    content: '';
+    position: absolute;
+    width: 0;
+    height: 3px;
+    background: var(--accent);
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: width 0.4s ease;
+    border-radius: 3px;
+  }
+
+  .nav-links a:hover::after {
+    width: 80px;
+  }
+
+  /* Enroll button in mobile menu */
+  .enroll-btn {
+    background: linear-gradient(135deg, var(--accent), var(--accent2));
+    color: #000 !important;
+    padding: 18px 60px !important;
+    border-radius: 60px;
+    font-size: 1.5rem !important;
+    font-weight: 900;
+    box-shadow: 0 15px 40px rgba(0,212,255,0.5);
+    margin-top: 20px;
+  }
+
+  /* Smooth X animation on hamburger */
+  .hamburger.active div:nth-child(1) { transform: rotate(45deg) translate(8px, 8px); }
+  .hamburger.active div:nth-child(2) { opacity: 0; }
+  .hamburger.active div:nth-child(3) { transform: rotate(-45deg) translate(7px, -7px); }
+}
+    
+    .hero{min-height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
     .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(0,212,255,0.25),transparent 70%);pointer-events:none;}
     .hero h1{font-family:'Space Grotesk';font-size:clamp(4rem,10vw,9rem);line-height:0.92;background:linear-gradient(135deg,#fff,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
     .hero p{font-size:1.5rem;color:#aaa;max-width:900px;margin:0 auto 40px;}
@@ -146,7 +244,12 @@ footer::before {
   font-size: 0.95rem;
   color: #777;
 }
-
+@media (max-width: 768px){
+      header{padding:12px 0;}
+      .hero h1{font-size:3.2rem !important;}
+      .fab{width:55px;height:55px;}
+      footer{padding:70px 5% 40px;margin-top:100px;}
+    }
 /* Mobile Responsiveness */
 @media (max-width: 768px) {
   footer { padding: 70px 5% 40px; margin-top: 100px; }
@@ -164,18 +267,27 @@ footer::before {
   </div>
 
   <header>
-    <nav>
-      <div class="logo"><a href="./index.html">PINNACLE</a></div>
-      <div class="nav-links">
-        <a href="./index.html" class="active">Home</a>
-        <a href="./course.html">Courses</a>
-        <a href="./results.html">Results</a>
-        <a href="./faculty.html">Faculty</a>
-        <a href="./contact.html">Contact</a>
-      </div>
+  <nav>
+    <div class="logo">PINNACLE</div>
+
+    <!-- Menu with ID (required for JS) -->
+    <div class="nav-links" id="navLinks">
+      <a href="index.html" class="active">Home</a>
+      <a href="courses.html">Courses</a>
+      <a href="results.html">Results</a>
+      <a href="faculty.html">Faculty</a>
+      <a href="contact.html">Contact</a>
       <a href="tel:+919876543210" class="enroll-btn">Call Now</a>
-    </nav>
-  </header>
+    </div>
+
+    <!-- HAMBURGER ICON (only visible on mobile) -->
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div>
+      <div></div>
+      <div></div>
+    </div>
+  </nav>
+</header>
 
   <!-- HERO -->
   <section class="hero">
@@ -299,7 +411,19 @@ footer::before {
     });
 
     // Auto popup after 10 seconds
-    setTimeout(() => document.getElementById('enquiry').style.display = 'flex', 10000);
+    setTimeout(() => document.getElementById('enquiry').style.display = 'flex', 5000);
+  // Hamburger Menu Toggle - WORKS 100%
+  function toggleMenu() {
+    document.getElementById('navLinks').classList.toggle('active');
+  }
+
+  // Optional: Close menu when clicking a link
+  document.querySelectorAll('.nav-links a').forEach(link => {
+    link.addEventListener('click', () => {
+      document.getElementById('navLinks').classList.remove('active');
+    });
+  });
+
   </script>
 </body>
 </html>
