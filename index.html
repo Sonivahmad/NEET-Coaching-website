@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Pinnacle Classes | NEET & JEE 2026 Rank 1 Batch</title>
+  <meta name="description" content="India's No.1 NEET & JEE Coaching | 1200+ Selections in 2025 | 18 Students in Top 100 AIR">
+  
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <style>
+    :root{--bg:#0a0618;--text:#fff;--accent:#00d4ff;--accent2:#ff2e63;--glass:rgba(255,255,255,0.06);}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);overflow-x:hidden;line-height:1.6;}
+    
+    header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,6,24,0.95);backdrop-filter:blur(20px);padding:16px 0;transition:0.4s;}
+    nav{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 5%;}
+    .logo{font-family:'Space Grotesk';font-size:2.8rem;font-weight:700;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-links a{color:#ccc;margin:0 20px;font-weight:600;text-decoration:none;transition:0.3s;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .enroll-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:14px 36px;border-radius:50px;font-weight:800;}
+
+    .hero{height:100vh;display:flex;align-items:center;justify-content:center;text-align:center;position:relative;overflow:hidden;}
+    .hero::before{content:'';position:absolute;inset:0;background:radial-gradient(circle at 20% 80%,rgba(0,212,255,0.25),transparent 70%);pointer-events:none;}
+    .hero h1{font-family:'Space Grotesk';font-size:clamp(4rem,10vw,9rem);line-height:0.92;background:linear-gradient(135deg,#fff,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;margin-bottom:20px;}
+    .hero p{font-size:1.5rem;color:#aaa;max-width:900px;margin:0 auto 40px;}
+
+    .stats{max-width:1200px;margin:0 auto;display:grid;grid-template-columns:repeat(auto-fit,minmax(200px,1fr));gap:30px;padding:80px 5%;background:rgba(0,212,255,0.03);border-radius:32px;}
+    .stat{text-align:center;}
+    .stat-num{font-size:4.5rem;font-weight:900;color:var(--accent);line-height:1;}
+    .stat-label{font-size:1.2rem;color:#ccc;}
+
+    .usps{max-width:1300px;margin:100px auto;padding:0 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:40px;}
+    .usp-card{background:var(--glass);border:1px solid rgba(255,255,255,0.12);border-radius:28px;padding:40px;text-align:center;backdrop-filter:blur(16px);transition:0.6s;}
+    .usp-card:hover{transform:translateY(-20px);border-color:var(--accent);box-shadow:0 30px 60px rgba(0,212,255,0.25);}
+    .usp-icon{width:90px;height:90px;margin:0 auto 24px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:grid;place-items:center;}
+
+    .toppers{max-width:1400px;margin:100px auto;padding:0 5%;text-align:center;}
+    .toppers h2{font-family:'Space Grotesk';font-size:3.5rem;margin-bottom:60px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .topper-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:30px;}
+    .topper{background:var(--glass);border-radius:24px;overflow:hidden;padding:20px;text-align:center;transition:0.5s;}
+    .topper:hover{transform:scale(1.08);}
+    .topper img{width:100%;height:300px;object-fit:cover;border-radius:16px;}
+    .rank{font-size:3.5rem;font-weight:900;color:var(--accent);margin:16px 0;}
+
+    .fab{position:fixed;bottom:30px;right:30px;width:70px;height:70px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,212,255,0.5);z-index:999;cursor:pointer;animation:pulse 2s infinite;}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+
+    .enquiry-popup{position:fixed;inset:0;background:rgba(0,0,0,0.92);display:none;align-items:center;justify-content:center;z-index:2000;}
+    .popup-card{background:var(--glass);backdrop-filter:blur(32px);border-radius:32px;padding:50px;width:90%;max-width:500px;text-align:center;}
+    .popup-card input, .popup-card select{width:100%;padding:18px;margin:12px 0;background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.3);border-radius:16px;color:#fff;font-size:1.1rem;}
+    .submit-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:18px 40px;border:none;border-radius:50px;font-weight:800;font-size:1.2rem;cursor:pointer;}
+ /* ==================== PROFESSIONAL RESPONSIVE FOOTER CSS ==================== */
+footer {
+  background: linear-gradient(135deg, #0f0b1f, #0a0618);
+  border-top: 3px solid var(--accent);
+  margin-top: 140px;
+  padding: 90px 5% 40px;
+  color: #ccc;
+  position: relative;
+  overflow: hidden;
+}
+
+footer::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: radial-gradient(circle at 20% 80%, rgba(0,212,255,0.15), transparent 70%);
+  pointer-events: none;
+}
+
+.footer-container {
+  max-width: 1400px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 50px;
+  position: relative;
+  z-index: 2;
+}
+
+.footer-logo h2 {
+  font-family: 'Space Grotesk', sans-serif;
+  font-size: 2.8rem;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.footer-links h3,
+.footer-contact h3,
+.footer-enroll h3 {
+  font-size: 1.5rem;
+  margin-bottom: 25px;
+  color: var(--accent);
+}
+
+.footer-links ul {
+  list-style: none;
+}
+
+.footer-links a {
+  color: #ccc;
+  text-decoration: none;
+  line-height: 2.4;
+  transition: 0.3s;
+  display: block;
+}
+
+.footer-links a:hover {
+  color: var(--accent);
+  padding-left: 8px;
+}
+
+.social-wa {
+  display: inline-block;
+  background: #25D366;
+  color: #fff;
+  padding: 12px 24px;
+  border-radius: 50px;
+  font-weight: 700;
+  text-decoration: none;
+  margin-top: 15px;
+}
+
+.enroll-footer-btn {
+  display: inline-block;
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  color: #000;
+  padding: 18px 40px;
+  border-radius: 60px;
+  font-weight: 900;
+  font-size: 1.2rem;
+  text-decoration: none;
+  margin-top: 15px;
+  box-shadow: 0 10px 30px rgba(0,212,255,0.4);
+}
+
+.copyright {
+  text-align: center;
+  margin-top: 70px;
+  padding-top: 30px;
+  border-top: 1px solid rgba(255,255,255,0.1);
+  font-size: 0.95rem;
+  color: #777;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 768px) {
+  footer { padding: 70px 5% 40px; margin-top: 100px; }
+  .footer-container { gap: 40px; }
+  .footer-logo h2 { font-size: 2.4rem; }
+  .enroll-footer-btn { font-size: 1.1rem; padding: 16px 32px; }
+}
+ </style>
+</head>
+<body>
+
+  <!-- Floating WhatsApp + Enquiry Trigger -->
+  <div class="fab" onclick="document.getElementById('enquiry').style.display='flex'">
+    <i data-lucide="message-circle" style="width:38px;height:38px;"></i>
+  </div>
+
+  <header>
+    <nav>
+      <div class="logo"><a href="./index.html">PINNACLE</a></div>
+      <div class="nav-links">
+        <a href="./index.html" class="active">Home</a>
+        <a href="./course.html">Courses</a>
+        <a href="./results.html">Results</a>
+        <a href="./faculty.html">Faculty</a>
+        <a href="./contact.html">Contact</a>
+      </div>
+      <a href="tel:+919876543210" class="enroll-btn">Call Now</a>
+    </nav>
+  </header>
+
+  <!-- HERO -->
+  <section class="hero">
+    <div>
+      <h1>NEET & JEE 2026<br><span style="color:var(--accent)">RANK 1</span> BATCH</h1>
+      <p>1200+ Selections in 2025 • 18 Students in Top 100 AIR • 8 Students AIR Under 50</p>
+      <a href="tel:+919876543210" class="enroll-btn" style="font-size:1.5rem;padding:20px 60px;display:inline-block;margin-top:30px;">Only 38 Seats Left – Enroll Now!</a>
+    </div>
+  </section>
+
+  <!-- STATS -->
+  <div class="stats">
+    <div class="stat"><div class="stat-num">1200+</div><div class="stat-label">Total Selections</div></div>
+    <div class="stat"><div class="stat-num">18</div><div class="stat-label">Top 100 AIR</div></div>
+    <div class="stat"><div class="stat-num">8</div><div class="stat-label">AIR &lt; 50</div></div>
+    <div class="stat"><div class="stat-num">100%</div><div class="stat-label">Medical College</div></div>
+  </div>
+
+  <!-- USPs -->
+  <div class="usps">
+    <div class="usp-card">
+      <div class="usp-icon"><i data-lucide="award"></i></div>
+      <h3>Top Faculty</h3>
+      <p>IIT + AIIMS Alumni with 15+ years experience</p>
+    </div>
+    <div class="usp-card">
+      <div class="usp-icon"><i data-lucide="target"></i></div>
+      <h3>Personal Mentoring</h3>
+      <p>1:20 Mentor-Student Ratio</p>
+    </div>
+    <div class="usp-card">
+      <div class="usp-icon"><i data-lucide="zap"></i></div>
+      <h3>Daily Tests + Analysis</h3>
+      <p>500+ Tests with Video Solutions</p>
+    </div>
+    <div class="usp-card">
+      <div class="usp-icon"><i data-lucide="book-open"></i></div>
+      <h3>Smart Study Material</h3>
+      <p>Concise Notes + 15,000 PYQs</p>
+    </div>
+  </div>
+
+  <!-- TOPPERS CAROUSEL -->
+  <section class="toppers">
+    <h2>Our Proud Toppers 2025</h2>
+    <div class="topper-grid">
+      <div class="topper"><img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=600" alt="AIR 7"><div class="rank">AIR 7</div><h3>Priya Sharma</h3><p>695/720</p></div>
+      <div class="topper"><img src="https://images.unsplash.com/photo-1581092160562-36aa8c3b01e0?w=600" alt="AIR 19"><div class="rank">AIR 19</div><h3>Rohan Mehta</h3><p>692/720</p></div>
+      <div class="topper"><img src="https://images.unsplash.com/photo-1581092580498-e0d23cbdf1dc?w=600" alt="AIR 34"><div class="rank">AIR 34</div><h3>Anjali Verma</h3><p>688/720</p></div>
+      <div class="topper"><img src="https://images.unsplash.com/photo-1581093450021-4a2e8c3b3e5e?w=600" alt="AIR 47"><div class="rank">AIR 47</div><h3>Arjun Singh</h3><p>685/720</p></div>
+    </div>
+  </section>
+
+  <!-- ENQUIRY POPUP -->
+  <div id="enquiry" class="enquiry-popup" onclick="this.style.display='none'">
+    <div class="popup-card" onclick="event.stopPropagation()">
+      <h2 style="font-size:2.5rem;margin-bottom:20px;">Book Your Seat Now!</h2>
+      <p style="margin-bottom:30px;color:#aaa;">Only 38 seats left in Rank 1 Batch</p>
+      <form onsubmit="event.preventDefault();window.open('https://wa.me/919876543210?text=Hi! I want to join Pinnacle Rank 1 Batch 2026')">
+        <input type="text" placeholder="Your Name" required>
+        <input type="tel" placeholder="Phone Number" required>
+        <select required><option value="">Current Class</option><option>11th</option><option>12th</option><option>Dropper</option></select>
+        <button type="submit" class="submit-btn">Send via WhatsApp</button>
+      </form>
+    </div>
+  </div>
+<footer>
+  <div class="footer-container">
+    <div class="footer-logo">
+      <h2>PINNACLE</h2>
+      <p style="margin:20px 0;font-size:1.1rem;line-height:1.8;color:#aaa;">
+        India's Most Trusted NEET & JEE Coaching<br>
+        <strong>1200+ Selections • 18 Top 100 AIR • Since 2015</strong>
+      </p>
+      <a href="https://wa.me/919876543210" class="social-wa">WhatsApp Us</a>
+    </div>
+
+    <div class="footer-links">
+      <h3>Quick Links</h3>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="courses.html">Courses</a></li>
+        <li><a href="results.html">Results</a></li>
+        <li><a href="faculty.html">Faculty</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="about.html">About Us</a></li>
+      </ul>
+    </div>
+
+    <div class="footer-contact">
+      <h3>Contact Info</h3>
+      <p><strong>Call:</strong> <a href="tel:+919876543210" style="color:var(--accent)">+91 98765 43210</a></p>
+      <p><strong>Email:</strong> info@pinnacleclasses.in</p>
+      <p><strong>Branches:</strong> Aliganj • Gomti Nagar • Indira Nagar<br>Lucknow, Uttar Pradesh</p>
+    </div>
+
+    <div class="footer-enroll">
+      <h3>Enroll 2026 Batch</h3>
+      <p style="color:#aaa;">Only 38 seats left!</p>
+      <a href="https://wa.me/919876543210?text=Hi! I want to join Pinnacle 2026 Batch" class="enroll-footer-btn">
+        Secure Seat via WhatsApp
+      </a>
+    </div>
+  </div>
+
+  <div class="copyright">
+    © 2025 Pinnacle Classes • All Rights Reserved | Crafting Future Doctors & Engineers
+  </div>
+</footer>
+  <script>
+    lucide.createIcons();
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from("h1", {y: 300, opacity: 0, duration: 2, ease: "elastic.out(1,0.5)"});
+    gsap.from(".stat", {y: 100, opacity: 0, stagger: 0.2, duration: 1.2, scrollTrigger: {trigger: ".stats", start: "top 80%"}});
+    gsap.utils.toArray(".usp-card").forEach((card,i) => {
+      gsap.from(card, {y: 200, opacity: 0, duration: 1, delay: i*0.2, scrollTrigger: {trigger: card, start: "top 85%"}});
+    });
+    gsap.utils.toArray(".topper").forEach((t,i) => {
+      gsap.from(t, {scale: 0, rotation: 20, opacity: 0, duration: 1, delay: i*0.15, ease: "back.out(1.7)", scrollTrigger: {trigger: t, start: "top 80%"}});
+    });
+
+    // Auto popup after 10 seconds
+    setTimeout(() => document.getElementById('enquiry').style.display = 'flex', 10000);
+  </script>
+</body>
+</html>

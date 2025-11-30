@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Results 2025 | Pinnacle Classes – 1200+ Selections</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root{--bg:#0a0618;--text:#fff;--accent:#00d4ff;--accent2:#ff2e63;--glass:rgba(255,255,255,0.06);}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);padding-top:100px;overflow-x:hidden;}
+
+    header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,6,24,0.95);backdrop-filter:blur(20px);padding:16px 0;}
+    nav{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 5%;}
+    .logo{font-family:'Space Grotesk';font-size:2.8rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-links a{color:#ccc;margin:0 20px;font-weight:600;text-decoration:none;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .enroll-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:14px 36px;border-radius:50px;font-weight:800;}
+
+    .hero{text-align:center;padding:100px 20px 60px;background:radial-gradient(circle at center,rgba(0,212,255,0.15),transparent);}
+    .hero h1{font-family:'Space Grotesk';font-size:clamp(3.5rem,9vw,7.5rem);background:linear-gradient(135deg,#fff,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero p{font-size:1.5rem;color:#aaa;margin-top:20px;}
+
+    .stats2025{max-width:1200px;margin:0 auto 100px;display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:30px;padding:0 5%;}
+    .big-stat{background:var(--glass);border:2px solid var(--accent);border-radius:32px;padding:50px;text-align:center;}
+    .big-num{font-size:5rem;font-weight:900;color:var(--accent);}
+    .big-label{font-size:1.4rem;margin-top:10px;}
+
+    .toppers-grid{max-width:1400px;margin:80px auto;padding:0 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(300px,1fr));gap:40px;}
+    .topper-card{
+      background:var(--glass);border-radius:36px;overflow:hidden;text-align:center;
+      backdrop-filter:blur(20px);transition:0.8s;box-shadow:0 20px 40px rgba(0,0,0,0.4);
+    }
+    .topper-card:hover{transform:scale(1.07) translateY(-20px);box-shadow:0 60px 120px rgba(0,212,255,0.4);}
+    .topper-card img{width:100%;height:380px;object-fit:cover;}
+    .rank-badge{
+      position:absolute;top:20px;left:50%;transform:translateX(-50%);
+      background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:12px 40px;border-radius:50px;font-size:2rem;font-weight:900;
+    }
+    .topper-info{padding:30px;background:linear-gradient(180deg,rgba(255,255,255,0.05),transparent);}
+    .topper-name{font-size:1.8rem;font-weight:700;margin:10px 0;}
+    .score{font-size:2.2rem;color:var(--accent);font-weight:900;}
+
+    .testimonials{max-width:1200px;margin:120px auto;padding:0 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(380px,1fr));gap:40px;}
+    .testimonial{
+      background:var(--glass);border-left:5px solid var(--accent);border-radius:20px;padding:40px;position:relative;
+    }
+    .testimonial::before{content:'"';font-size:8rem;position:absolute;top:-20px;left:20px;opacity:0.1;color:var(--accent);}
+    .testimonial p{font-size:1.2rem;line-height:1.8;margin-bottom:20px;}
+    .student-name{font-weight:700;color:var(--accent);}
+
+    .fab{position:fixed;bottom:30px;right:30px;width:70px;height:70px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,212,255,0.5);z-index:999;animation:pulse 2s infinite;cursor:pointer;}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">PINNACLE</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="results.html" class="active">Results</a>
+        <a href="#">Faculty</a>
+        <a href="#">Contact</a>
+      </div>
+      <a href="tel:+919876543210" class="enroll-btn">Call Now</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>NEET & JEE 2025 Results</h1>
+    <p>1200+ Students Qualified • 18 in Top 100 AIR • 8 Under AIR 50</p>
+  </section>
+
+  <!-- Big Stats -->
+  <div class="stats2025">
+    <div class="big-stat"><div class="big-num">1200+</div><div class="big-label">Total Selections</div></div>
+    <div class="big-stat"><div class="big-num">18</div><div class="big-label">Top 100 AIR</div></div>
+    <div class="big-stat"><div class="big-num">8</div><div class="big-label">AIR &lt; 50</div></div>
+    <div class="big-stat"><div class="big-num">100%</div><div class="big-label">Govt. Medical College</div></div>
+  </div>
+
+  <!-- Toppers Grid -->
+  <div class="toppers-grid">
+    <div class="topper-card"><img src="https://images.unsplash.com/photo-1594736797933-d0501ba2fe65?w=800" alt="AIR 7"><div class="rank-badge">AIR 7</div><div class="topper-info"><div class="topper-name">Priya Sharma</div><div class="score">695/720</div></div></div>
+    <div class="topper-card"><img src="https://images.unsplash.com/photo-1581092160562-36aa8c3b01e0?w=800" alt="AIR 19"><div class="rank-badge">AIR 19</div><div class="topper-info"><div class="topper-name">Rohan Mehta</div><div class="score">692/720</div></div></div>
+    <div class="topper-card"><img src="https://images.unsplash.com/photo-1581092580498-e0d23cbdf1dc?w=800" alt="AIR 34"><div class="rank-badge">AIR 34</div><div class="topper-info"><div class="topper-name">Anjali Verma</div><div class="score">688/720</div></div></div>
+    <div class="topper-card"><img src="https://images.unsplash.com/photo-1581093450021-4a2e8c3b3e5e?w=800" alt="AIR 47"><div class="rank-badge">AIR 47</div><div class="topper-info"><div class="topper-name">Arjun Singh</div><div class="score">685/720</div></div></div>
+    <div class="topper-card"><img src="https://images.unsplash.com/photo-1554151228-14d9def65654?w=800" alt="AIR 68"><div class="rank-badge">AIR 68</div><div class="topper-info"><div class="topper-name">Neha Gupta</div><div class="score">682/720</div></div></div>
+    <div class="topper-card"><img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=800" alt="AIR 89"><div class="rank-badge">AIR 89</div><div class="topper-info"><div class="topper-name">Sanya Kapoor</div><div class="score">679/720</div></div></div>
+  </div>
+
+  <!-- Testimonials -->
+  <div class="testimonials">
+    <div class="testimonial">
+      <p>“From 450 to 695 in just 14 months! Pinnacle’s daily tests and personal mentoring changed my life. Best coaching ever!”</p>
+      <div class="student-name">— Priya Sharma (AIR 7)</div>
+    </div>
+    <div class="testimonial">
+      <p>“The faculty here treats you like family. They never gave up on me even when I scored low in mocks. Thank you Pinnacle!”</p>
+      <div class="student-name">— Rohan Mehta (AIR 19)</div>
+    </div>
+    <div class="testimonial">
+      <p>“Best decision of my life. From repeater to Top 100 — all because of their error analysis system and 1:15 mentoring.”</p>
+      <div class="student-name">— Anjali Verma (AIR 34)</div>
+    </div>
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <div class="fab" onclick="window.open('https://wa.me/919876543210?text=Hi! I saw your amazing results and want to join 2026 batch')">
+    <i data-lucide="message-circle" style="width:38px;height:38px;"></i>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    gsap.registerPlugin(ScrollTrigger);
+
+    gsap.from(".hero h1", {y:120, opacity:0, duration:1.5, ease:"power4.out"});
+    gsap.utils.toArray('.big-stat').forEach((s,i) => gsap.from(s,{scale:0.5, opacity:0, duration:1, delay:i*0.2, ease:"elastic.out(1,0.6)", scrollTrigger:{trigger:s}}));
+    gsap.utils.toArray('.topper-card').forEach((c,i) => {
+      gsap.from(c, {y:300, rotation:15, opacity:0, duration:1.3, delay:i*0.15, ease:"back.out(1.8)", scrollTrigger:{trigger:c, start:"top 80%"}});
+    });
+    gsap.utils.toArray('.testimonial').forEach((t,i) => gsap.from(t,{x:i%2===0?-200:200, opacity:0, duration:1.2, delay:i*0.3, scrollTrigger:{trigger:t}}));
+  </script>
+</body>
+</html>

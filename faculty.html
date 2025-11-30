@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our Star Faculty | Pinnacle Classes</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;900&family=Space+Grotesk:wght@700&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/ScrollTrigger.min.js"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+
+  <style>
+    :root{--bg:#0a0618;--text:#fff;--accent:#00d4ff;--accent2:#ff2e63;--glass:rgba(255,255,255,0.06);}
+    *{margin:0;padding:0;box-sizing:border-box;}
+    body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);padding-top:100px;overflow-x:hidden;}
+
+    header{position:fixed;top:0;width:100%;z-index:1000;background:rgba(10,6,24,0.95);backdrop-filter:blur(20px);padding:16px 0;}
+    nav{max-width:1400px;margin:auto;display:flex;justify-content:space-between;align-items:center;padding:0 5%;}
+    .logo{font-family:'Space Grotesk';font-size:2.8rem;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .nav-links a{color:#ccc;margin:0 20px;font-weight:600;text-decoration:none;}
+    .nav-links a:hover,.nav-links a.active{color:var(--accent);}
+    .enroll-btn{background:linear-gradient(135deg,var(--accent),var(--accent2));color:#000;padding:14px 36px;border-radius:50px;font-weight:800;}
+
+    .hero{text-align:center;padding:100px 20px 80px;background:radial-gradient(circle at center,rgba(0,212,255,0.1),transparent);}
+    .hero h1{font-family:'Space Grotesk';font-size:clamp(3.5rem,9vw,7.5rem);background:linear-gradient(135deg,#fff,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;}
+    .hero p{font-size:1.5rem;color:#aaa;margin-top:20px;}
+
+    .faculty-grid{max-width:1400px;margin:80px auto;padding:0 5%;display:grid;grid-template-columns:repeat(auto-fit,minmax(340px,1fr));gap:50px;}
+    .faculty-card{
+      background:var(--glass);border:2px solid rgba(255,255,255,0.08);border-radius:40px;overflow:hidden;
+      backdrop-filter:blur(24px);transition:all 0.8s cubic-bezier(0.16,1,0.3,1);position:relative;cursor:pointer;
+    }
+    .faculty-card:hover{
+      transform:translateY(-40px) scale(1.05);border-color:var(--accent);box-shadow:0 70px 140px rgba(0,212,255,0.4);
+    }
+    .faculty-card img{width:100%;height:420px;object-fit:cover;filter:brightness(0.92);}
+    .info{padding:36px;text-align:center;position:relative;}
+    .name{font-family:'Space Grotesk';font-size:2.2rem;font-weight:900;margin:12px 0;}
+    .subject{
+      font-size:1.4rem;color:var(--accent);font-weight:700;margin-bottom:16px;
+      background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-background-clip:text;-webkit-text-fill-color:transparent;
+    }
+    .qual{font-size:1.1rem;color:#aaa;margin:8px 0;}
+    .stats{display:flex;justify-content:center;gap:30px;margin-top:20px;flex-wrap:wrap;}
+    .stat-box{background:rgba(0,212,255,0.15);padding:12px 20px;border-radius:16px;font-weight:700;}
+    .stat-num{color:var(--accent);font-size:1.6rem;}
+
+    .fab{position:fixed;bottom:30px;right:30px;width:70px;height:70px;background:linear-gradient(135deg,var(--accent),var(--accent2));border-radius:50%;display:grid;place-items:center;box-shadow:0 20px 50px rgba(0,212,255,0.5);z-index:999;animation:pulse 2s infinite;cursor:pointer;}
+    @keyframes pulse{0%,100%{transform:scale(1)}50%{transform:scale(1.2)}}
+  </style>
+</head>
+<body>
+
+  <header>
+    <nav>
+      <div class="logo">PINNACLE</div>
+      <div class="nav-links">
+        <a href="index.html">Home</a>
+        <a href="courses.html">Courses</a>
+        <a href="results.html">Results</a>
+        <a href="faculty.html" class="active">Faculty</a>
+        <a href="#">Contact</a>
+      </div>
+      <a href="tel:+919876543210" class="enroll-btn">Call Now</a>
+    </nav>
+  </header>
+
+  <section class="hero">
+    <h1>Meet Your Mentors</h1>
+    <p>IIT + AIIMS Alumni • 15–28 Years Experience • Producers of 5000+ Doctors & Engineers</p>
+  </section>
+
+  <div class="faculty-grid">
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1612349317150-e413f6a5b16d?w=800" alt="Dr. Rajesh Sir">
+      <div class="info">
+        <div class="name">Dr. Rajesh Sharma</div>
+        <div class="subject">Physics</div>
+        <div class="qual">IIT Bombay • Ex-HOD FIITJEE</div>
+        <div class="stats">
+          <div class="stat-box"><div class="stat-num">28</div>Yrs Exp</div>
+          <div class="stat-box"><div class="stat-num">3200+</div>Selections</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1582750433846-9365b09f1c2b?w=800" alt="Dr. Priya Ma'am">
+      <div class="info">
+        <div class="name">Dr. Priya Gupta</div>
+        <div class="subject">Biology</div>
+        <div class="qual">AIIMS Delhi Gold Medalist</div>
+        <div class="stats">
+          <div class="stat-box"><div class="stat-num">22</div>Yrs Exp</div>
+          <div class="stat-box"><div class="stat-num">4100+</div>Selections</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1560250097-0b93528c311a?w=800" alt="Prof. Amit Sir">
+      <div class="info">
+        <div class="name">Prof. Amit Verma</div>
+        <div class="subject">Chemistry</div>
+        <div class="qual">IIT Delhi • Author of 8 Books</div>
+        <div class="stats">
+          <div class="stat-box"><div class="stat-num">25</div>Yrs Exp</div>
+          <div class="stat-box"><div class="stat-num">3800+</div>Selections</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1559523309-5c3c0d7e6859?w=800" alt="Dr. Neha Ma'am">
+      <div class="info">
+        <div class="name">Dr. Neha Kapoor</div>
+        <div class="subject">Botany</div>
+        <div class="qual">AIIMS • Ex-Allen Faculty</div>
+        <div class="stats">
+          <div class="stat-box"><div class="stat-num">18</div>Yrs Exp</div>
+          <div class="stat-box"><div class="stat-num">2900+</div>Selections</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=800" alt="Prof. Vikram Sir">
+      <div class="info">
+        <div class="name">Prof. Vikram Singh</div>
+        <div class="subject">Physical Chemistry</div>
+        <div class="qual">IIT Kanpur • 12 Times JEE Adv. Topper Maker</div>
+        <div class="stats">
+          <div class="stat-box"><div class="stat-num">20</div>Yrs Exp</div>
+          <div class="stat-box"><div class="stat-num">3400+</div>Selections</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="faculty-card">
+      <img src="https://images.unsplash.com/photo-1582750433846-9365b09f1c2b?w=800" alt="Dr. Sanjay Sir">
+      <div class="info">
+        <div class="name">Dr. Sanjay Rao</div>
+        <div class="subject">Zoology</div>
+        <div class="qual">JIPMER • 15+ Years</div>
+        <div class="stats">
+          <div class="stat-box"><div class="stat-num">19</div>Yrs Exp</div>
+          <div class="stat-box"><div class="stat-num">3100+</div>Selections</div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Floating WhatsApp -->
+  <div class="fab" onclick="window.open('https://wa.me/919876543210?text=Hi! I am impressed by your faculty! Want to join 2026 batch')">
+    <i data-lucide="message-circle" style="width:38px;height:38px;"></i>
+  </div>
+
+  <script>
+    lucide.createIcons();
+    gsap.registerPlugin(ScrollTrigger);
+
+    
+
+    gsap.from(".hero h1", {y:150, opacity:0, duration:1.5, ease:"power4.out"});
+    gsap.utils.toArray('.faculty-card').forEach((card, i) => {
+      gsap.from(card, {
+        y: 250,
+        opacity: 0,
+        rotation: i % 2 === 0 ? -15 : 15,
+        duration: 1.4,
+        delay: i * 0.15,
+        ease: "elastic.out(1,0.6)",
+        scrollTrigger: { trigger: card, start: "top 85%" }
+      });
+    });
+  </script>
+</body>
+</html>
